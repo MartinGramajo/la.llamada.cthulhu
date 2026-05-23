@@ -265,6 +265,22 @@ export const storyData: Record<string, StoryNode> = {
       "https://res.cloudinary.com/dtbfspso5/image/upload/v1779491573/la%20llamada/e94dbbac-be9b-4e12-991d-6d48caa3e63d.png",
     nextPageId: "intro",
   },
+    "14": {
+    id: "14",
+    title: "Página 14",
+    text: [
+      "Entiendes que si Wilcox fue importante para el profesor Angell, también puede serlo para tu investigación. Consigues sacarlo del recinto y le invitas a pasar algunas noches en el cuarto de invitados de tu casa en Boston, donde crees que podréis hablar tranquilamente y, en el caso de que vuelva a tener esas pesadillas, sacar algo de ellas. Wilcox, desesperado y necesitado de cualquier tipo de ayuda que alivie su soledad, accede a acompañarte. ",
+      "Durante el día, Henry se muestra tranquilo y hastacoherente, aunque notas que su estado nervioso es muyvolátil y que en cualquier momento puede tener una crisis.Accede a hablarte de sus encuentros con el profesor Angelly de las conversaciones que mantuvieron acerca del llamado«Culto de Cthulhu». ",
+      "Esa misma noche, y tras una copiosa cena, el muchacho  empieza a revolverse en sueños. Te acercas a su cama con una libreta y un lápiz y empiezas a tomar nota de todas sus reacciones y de los extraños balbuceos que profiere",
+      "Estás convencido de que, tal y como ocurrió cuando se entrevistaba con el profesor Angell, de sus pesadillas destilará alguna revelación importante… "
+    ],
+    choices: [
+      {
+        text: "Continúa apostado junto al lecho de Henry Wilcox, en la página 19 ",
+         toId: "19",
+      },
+    ],
+  },
   "17": {
     id: "17",
     title: "Página 17",
