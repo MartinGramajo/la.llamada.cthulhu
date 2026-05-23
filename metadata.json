@@ -1,0 +1,6 @@
+{
+  "name": "La Llamada de Cthulhu",
+  "description": "Una aventura interactiva al estilo Elige Tu Propia Aventura, basada en la adaptación del clásico cósmico con inventario y funcionalidad PWA sin conexión.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-paper-bg: var(--theme-bg);
+  --color-paper-card: var(--theme-card);
+  --color-paper-border: var(--theme-border);
+  --color-ink-main: var(--theme-text-main);
+  --color-ink-light: var(--theme-text-light);
+  --color-ink-accent: var(--theme-accent);
+}
+
+:root {
+  --theme-bg: #f4e9d8;
+  --theme-card: #e9dbbf;
+  --theme-border: #d4c39f;
+  --theme-text-main: #2c2722;
+  --theme-text-light: #554d44;
+  --theme-accent: #8c2a2a;
+}
+
+html.dark {
+  --theme-bg: #0f172a;
+  --theme-card: #1e293b;
+  --theme-border: #334155;
+  --theme-text-main: #e2e8f0;
+  --theme-text-light: #94a3b8;
+  --theme-accent: #10b981;
+}
+
+body {
+  background-color: var(--color-paper-bg);
+  color: var(--color-ink-main);
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
