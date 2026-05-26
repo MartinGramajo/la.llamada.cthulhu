@@ -91,17 +91,7 @@ export const storyData: Record<string, StoryNode> = {
       },
     ],
   },
-  // interlude_1: {
-  //   id: "interlude_1",
-  //   text: [
-  //     "Toda la estructura del barco tiembla con un fuerte sonido de maderas quebradas y metal retorcido.",
-  //   ],
-  //   choices: [{ text: "Navegas hasta el final, en la página 111", toId: "11" }],
-  //   isInterlude: true,
-  //   imageUrl:
-  //     "https://media.istockphoto.com/id/528729338/es/foto/monster-y-antiguo-barco.jpg?s=1024x1024&w=is&k=20&c=U8qgxqPToIazAxTlJ58D963FHkiKRicJwRqlLlp3XJM=",
-  //   nextPageId: "111",
-  // },
+  
   "6": {
     id: "6",
     title: "Página 6",

@@ -6,10 +6,11 @@ import { getStoryNode } from '../data/story';
 const STORAGE_KEY = 'cthulhu-game-state';
 
 const defaultState: GameState = {
-  currentNodeId: 'intro',
+  currentNodeId: 'intro', // Configurado para arrancar en Intro
   inventory: [],
   notes: [],
-  visitedNodes: ['intro']
+  visitedNodes: ['intro'],
+  discoveredEndings: [] 
 };
 
 export function useGameState() {
@@ -51,10 +52,19 @@ export function useGameState() {
     };
     
     setGameState(newState);
-    if (!isInterlude) {
-      saveState(newState);
-    }
+    saveState(newState);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const toggleEnding = (endingId: string) => {
+    const currentEndings = gameState.discoveredEndings || [];
+    const updatedEndings = currentEndings.includes(endingId)
+      ? currentEndings.filter(id => id !== endingId)
+      : [...currentEndings, endingId];
+
+    const newState = { ...gameState, discoveredEndings: updatedEndings };
+    setGameState(newState);
+    saveState(newState);
   };
 
   const addNote = (content: string) => {
@@ -63,39 +73,27 @@ export function useGameState() {
       content,
       timestamp: Date.now()
     };
-    const newState = {
-      ...gameState,
-      notes: [...gameState.notes, newNote]
-    };
+    const newState = { ...gameState, notes: [...gameState.notes, newNote] };
     setGameState(newState);
     saveState(newState);
   };
 
   const removeNote = (noteId: string) => {
-    const newState = {
-      ...gameState,
-      notes: gameState.notes.filter(n => n.id !== noteId)
-    };
+    const newState = { ...gameState, notes: gameState.notes.filter(n => n.id !== noteId) };
     setGameState(newState);
     saveState(newState);
   };
 
   const addInventoryItem = (item: InventoryItem) => {
     if (!gameState.inventory.find(i => i.id === item.id)) {
-      const newState = {
-        ...gameState,
-        inventory: [...gameState.inventory, item]
-      };
+      const newState = { ...gameState, inventory: [...gameState.inventory, item] };
       setGameState(newState);
       saveState(newState);
     }
   };
 
   const removeInventoryItem = (itemId: string) => {
-    const newState = {
-      ...gameState,
-      inventory: gameState.inventory.filter(i => i.id !== itemId)
-    };
+    const newState = { ...gameState, inventory: gameState.inventory.filter(i => i.id !== itemId) };
     setGameState(newState);
     saveState(newState);
   };
@@ -114,6 +112,7 @@ export function useGameState() {
     removeNote,
     addInventoryItem,
     removeInventoryItem,
+    toggleEnding,
     resetGame
   };
 }
