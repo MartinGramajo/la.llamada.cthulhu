@@ -150,6 +150,11 @@ export default function App() {
         toggleEnding={toggleEnding}
         resetGame={resetGame}
       />
+      <footer>
+        <div className="max-w-2xl w-full mx-auto p-4 text-center text-ink-light text-xs font-serif">
+          <p> 🎩 © 2026</p>
+        </div>
+      </footer>
     </div>
   );
 }
